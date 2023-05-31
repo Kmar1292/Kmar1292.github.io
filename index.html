@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Kevin Mar's Portfolio</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="device=device-width" />
+        <link rel="stylesheet" type="text/css" href="./css/portfolio_css.css">
+    </head>
+    <body>
+
+        <!-- NAV -->
+        <nav class="navbar">
+            <a href="#home"><li>Home</li></a>
+            <a href="#about"><li>About</li></a>
+            <a href="#github"><li>GitHub</li></a>
+            <a href="#contact"><li>Contact</li></a>
+        </nav>
+        <!-- END NAV -->
+
+        <!-- HOME -->
+        <section id="home">
+            <!-- Background vid -->
+            <div>
+                <video autoplay muted loop id="background_vid">
+                    <source src="./videos/ocean.mp4" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
+            </div>
+            <!-- End Background vid -->
+
+            <!-- Background vid TEXT -->
+            <div class="video_text">
+                <h1 class="white-text">Kevin's Portfolio</h1>
+                <strong>
+                    <p class="center">
+                        Wecome to my portfolio website! My name is Kevin Mar. Here you will learn about my background, experience, and projects as a game developer.
+                    </p>
+                </strong>
+            </div>
+        </section>
+        <!-- END HOME -->
+
+        <!-- ABOUT -->
+        <section id="about" class="row">
+            <!-- Left -->
+            <div class="column_2">
+                <img src="./images/about.jpg" alt="Game Controller">
+            </div>
+
+            <!-- Right -->
+            <div class="column_1">
+                <h1>About</h1>
+                <p class="center">
+                    I am a game developer who has always had a passion for gaming! I hope to create games that will provide many fond memories and hours of entertainment for those that play them.
+                    <br>
+                    <br>I am a graduate of <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a>'s Game Developer Boot Camp. I am trained and experienced in the following programming languages: HTML, CSS, Javascript, SQL, C#, C++ and more. I have experience working with the following game engines: Unity, Unreal Engine.
+                    <br>
+                    <br>Check out my <a href="#github">projects</a> down below, or feel free to <a href="#contact">contact</a> me if you would like to work together!
+                </p>
+            </div>
+        </section>            
+        <!-- END ABOUT -->
+
+        <!-- GITHUB -->
+        <section id="github" class="row">
+            <!-- Left -->
+            <div class="column_1">
+                <h1>GitHub</h1>
+                <p class="center">
+                    You can view my projects on GitHub here:
+                    <br>
+                    <p class="center"><a href="https://github.com/Kmar1292" target="_blank">Kevin Mar's GitHub</a></p>
+                </p>
+            </div>
+
+            <!-- Right -->
+            <div class="column_2">
+                <a href="https://github.com/Kmar1292" target="_blank"><img src="./images/GitHub.png" alt="https://github.com/Kmar1292"></a>
+            </div>
+        </section>
+        <!-- END GITHUB -->
+
+        <!-- CONTACT -->
+        <section id="contact" class="row">
+            <!-- Left -->
+            <div class="column_2 column_tall">
+                <br>
+                <br>
+                <img src="./images/contact.jpg" alt="Contact">
+            </div>
+            
+            <!-- Right -->
+            <div class="column_1 column_tall">
+                <h1>Contact</h1>
+                <form action="https://formspree.io/f/xlekkkev" method="post">
+                    <label>Name:</label>
+                        <input type="text" placeholder="Enter your name">
+                    </label>Email:</label>
+                        <input type="text" id="Email" name="Email" placeholder="Enter your email">
+                    <label>Message:</label>
+                        <input type="text" id="Message" name="Message" placeholder="Enter your message">
+                        <input type="submit" value="SUBMIT">
+                </form>
+            </div>
+        </section>
+        <!-- END CONTACT -->
+
+        <!-- Footer -->
+        <footer>
+            <p class="center">
+                &copy; <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a>
+            </p>
+        </footer>
+
+    </body>
+</html>
