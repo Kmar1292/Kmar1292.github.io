@@ -11,9 +11,10 @@
         <!-- NAV -->
         <nav class="navbar">
             <a href="#home"><li>Home</li></a>
+            <a href="#slideshow"><li>Slideshow</li></a>
             <a href="#about"><li>About</li></a>
             <a href="#github"><li>GitHub</li></a>
-            <a href="#contact"><li>Contact</li></a>
+            <a onclick="openForm()" ondblclick="closeForm()" class="contact"><li>Contact</li></a>
         </nav>
         <!-- END NAV -->
 
@@ -39,6 +40,48 @@
             </div>
         </section>
         <!-- END HOME -->
+
+        <!-- Slideshow -->
+        <div id="slideshow">
+            <div id="slideshow_background"> 
+                <div id="slideshow_container">
+                    <!-- Slide 1 of 4 -->
+                    <div class="mySlides fade">
+                        <img class="slideshow_images" src="./images/Composite_Photo_square.jpg" alt="Portrait Photo">
+                        <div class="text">My name is Kevin Mar, and I am an aspiring game developer!</div>
+                    </div>
+                    <!-- Slide 2 of 4 -->
+                    <div class="mySlides fade">
+                        <img class="slideshow_images" src="./images/html_css_js_square.jfif" alt="HTML, CSS, and JS logos"> 
+                        <div class="text">I have experience with HTML, CSS, JavaScript...</div>
+                    </div>
+                    <!-- Slide 3 of 4 -->
+                    <div class="mySlides fade">
+                        <img class="slideshow_images" src="./images/unity_logo_square.png" alt="Unity">
+                        <div class="text">...the Unity game engine...</div>
+                    </div>
+                    <!-- Slide 4 of 4 -->
+                    <div class="mySlides fade">
+                        <img class="slideshow_images" src="./images/unreal_engine_logo.png" alt="Unreal Engine">
+                        <div class="text">...Unreal Engine, and more!</div>
+                    </div>
+
+                    <!-- Previous and next buttons -->
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <br> 
+
+                <!-- Slideshow dots -->
+                <div style="text-align: center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span> 
+                    <span class="dot" onclick="currentSlide(4)"></span> 
+                </div>
+            </div>
+        </div>        
+        <!-- End slideshow -->
 
         <!-- ABOUT -->
         <section id="about" class="row">
@@ -80,17 +123,18 @@
         </section>
         <!-- END GITHUB -->
 
-        <!-- CONTACT -->
-        <section id="contact" class="row">
+        <!-- CONTACT SECTION-->
+        <!-- <section id="contact" class="row"> -->
             <!-- Left -->
-            <div class="column_2 column_tall">
+            <!-- <div class="column_2 column_tall">
+                <br>
                 <br>
                 <br>
                 <img src="./images/contact.jpg" alt="Contact">
-            </div>
+            </div> -->
             
             <!-- Right -->
-            <div class="column_1 column_tall">
+            <!-- <div class="column_1 column_tall">
                 <h1>Contact</h1>
                 <form action="https://formspree.io/f/xlekkkev" method="post">
                     <label>Name:</label>
@@ -102,9 +146,35 @@
                         <input type="submit" value="SUBMIT">
                 </form>
             </div>
-        </section>
-        <!-- END CONTACT -->
+        </section> -->
+        <!-- END CONTACT SECTION-->
 
+        <!-- Contact form -->
+        <div id="contact">
+            <button onclick="openForm()" class="Pop_Up_Button">CONTACT</button>
+            <div class="form-popup" id="myForm">
+                <form action="https://formspree.io/f/xlekkkev" method="POST" class="form-container">
+                    <h1>CONTACT</h1>
+                    <label for="name"><b>Name</b></label>
+                        <input type="text" placeholder="Name" name="name" required>
+                    <label for="phone"><b>Phone</b></label>
+                        <input type="text" placeholder="Phone" name="phone">
+                    <label for="email"><b>Email</b></label>
+                        <input type="text" placeholder="Email" name="email" required>
+                    <label for="message"><b>Message</b></label>
+                        <input type="text" placeholder="Message" name="message">
+
+                    <button type="submit" class="btn">SUBMIT</button>
+                    <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
+                </form>
+            </div>
+        </div>
+        <!-- End contact form -->
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <!-- Footer -->
         <footer>
             <p class="center">
@@ -112,5 +182,6 @@
             </p>
         </footer>
 
+        <script src="./js/portfolio_js.js"></script>
     </body>
 </html>

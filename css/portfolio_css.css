@@ -1,10 +1,11 @@
 html{
     font-family: Georgia, "Times New Roman", sans-serif;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 body{
     margin: 0%;
+    overflow-x: hidden;
 }
 
 h1{
@@ -12,9 +13,8 @@ h1{
     text-align: center;
     margin-top: 4%;
     color: black;
-    font-size: 2em;
-    font-family: "Brush Script MT", Georgia, sans-serif;
     font-size: 3em;
+    font-family: "Brush Script MT", Georgia, sans-serif;
 }
 
 h1:hover{
@@ -31,6 +31,12 @@ h1:hover{
     top: 0;
     width: 100%;
     z-index: 1;
+    animation: moveNavbar 1s;
+}
+
+@keyframes moveNavbar{
+    from {left: -100vw;}
+    to {left: 0vw;}
 }
 
 .navbar a{
@@ -54,6 +60,10 @@ h1:hover{
     background-color: darkgrey;
 }
 
+.contact{
+    cursor: pointer;
+}
+
 #background_vid{
     position: fixed;
     right: 0;
@@ -72,16 +82,119 @@ h1:hover{
     background: rgba(255, 255, 255, 0.25);
     color: black;
     width: 100%;
+    height: 300px;
     padding: 20px;
     position: relative;
     -webkit-animation: moveVideoText 1s;
-    animation: moveVideoText 1s;
+    animation: fadeVideoText 1.5s;
 }
 
-@keyframes moveVideoText{
-    from {top: -100vw;}
-    to {top: 0vw;}
+@keyframes fadeVideoText{
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
+
+/* Slideshow stuff */
+#slideshow_background{
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.mySlides{
+    display: none;
+}
+
+#slideshow_container{
+    width: 40vw;
+    height: auto;
+    padding-top: 4%;
+    position: relative;
+    margin: auto;
+}
+
+#slideshow_container a{
+    text-decoration: none;
+}
+
+.slideshow_images{
+    vertical-align: middle;
+    height: auto;
+    box-shadow: 0px 5px 10px 12px rgba(0, 0, 0, .75);
+    width: 100%;
+    background-color: #304d63;
+}
+
+.prev, .next{
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 2vw;
+    color: darkgrey;
+    font-weight: bold;
+    font-size: 1.5vw;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    transition: 0.6s ease;
+}
+
+.next{
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover{
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+}
+
+.text{
+    color: white;
+    padding: 1vw;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-family: Georgia, "Times New Roman", sans-serif;
+    letter-spacing: .1vw;
+    font-size: 1vw;
+    background-color: rgba(0, 0, 0, 0.75);
+    font-weight: bold;
+    border-radius: 0px 0px 7px 7px;
+}
+
+.dot{
+    cursor: pointer;
+    height: 1vw;
+    width: 1vw;
+    margin: .25vw;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    z-index: 1;
+}
+
+.active, .dot:hover{
+    background-color: black;
+}
+
+.fade{
+    animation-name: fade;
+    animation-duration: 1.5s;
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade{
+    from {opacity: .4;}
+    to {opacity: 1;}
+}
+
+@keyframes fade{
+    from {opacity: .4;}
+    to {opacity: 1;}
+}
+/* End slideshow stuff */
 
 .center{
     text-align: center;
@@ -97,10 +210,26 @@ img{
     margin-right: auto;
 }
 
+img.slideshow_images{
+    border-radius: 8px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    filter: none;
+}
+
 img:hover{
     filter: grayscale(5%);
     transition: transform 1.5s;
     transform: scale(1.1);
+}
+
+img.slideshow_images:hover{
+    transition: none;
+    transform: none;
+    filter: none;
 }
 
 *{
@@ -133,7 +262,7 @@ img:hover{
 
 .column_tall{
     padding-top: 1%;
-    height: 450px;
+    height: 475px;
 }
 
 .row:after{
@@ -183,4 +312,90 @@ form{
 
 footer{
     color: white;
+}
+
+.Pop_Up_Button{
+    position: fixed;
+    bottom: 1.75vw;
+    right: 1.75vw;
+    width: 25vw;
+    background-color: white;
+    color: black;
+    border: solid black;
+    cursor: pointer;
+    -webkit-animation: movePopup 1s;
+    animation: movePopup 1s;
+}
+
+@keyframes movePopup{
+    from {right: -40vw;}
+    to {right: 1.75vw;}
+}
+
+@-webkit-keyframes movePopup{
+    from {right: -40vw;}
+    to {right: 1.75vw;}
+}
+
+.form-popup{
+    z-index: 8;
+    display: none;
+    position: fixed;
+    bottom: .5vw;
+    right: .5vw;
+}
+
+.form-container{
+    max-width: 49vw;
+    padding: 1vw;
+    background-color: white;
+}
+
+.form-container input[type=text]{
+    width: 100%;
+    padding: .93vw;
+    margin: .6vw 0 .6vw 0;
+    border: none;
+    background-color: Gainsboro;
+    font-size: 1vw;
+}
+
+button{
+    font-family: "Trebuchet MS", Optima;
+    letter-spacing: .3vw;
+    font-size: 1.5vw;
+    font-weight: bold;
+    padding: 1.5vw;
+    cursor: pointer;
+    width: 100%;
+    height: auto;
+}
+
+button:hover, .form-container .btn:hover{
+    color: white;
+    background-color: #304d63;
+    transition-duration: 1s;
+    -webkit-animation-duration: 1s;
+    border-color: silver;
+}
+
+.form-container .btn{
+    background-color: white;
+    color: black;
+    border-color: black;
+    margin-bottom: 1vh;
+}
+
+.form-container .cancel{
+    background-color: black;
+    color: white;
+    border-color: gray;
+}
+
+.form-container .cancel:hover{
+    color: white;
+    background-color: #304d63;
+    transition-duration: 1s;
+    -webkit-animation-duration: 1s;
+    border-color: black;
 }
